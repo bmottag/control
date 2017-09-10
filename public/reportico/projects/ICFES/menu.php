@@ -30,9 +30,7 @@ $dropdown_menu = array(
                         "project" => "novedades",
                         "title" => "Novedades",
                         "items" => array (
-                            array ( "reportfile" => "anulaciones.xml" ),
-                            array ( "reportfile" => "cambio_cuadernillo.xml" ),
-							array ( "reportfile" => "holguras.xml" ),
+							array ( "reportfile" => "otras_novedades.xml" ),
                             )
                         ),
                     array ( 
