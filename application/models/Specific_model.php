@@ -82,7 +82,7 @@ class Specific_model extends CI_Model {
 					$this->db->where('Y.fk_id_user_operador', $this->session->id); //FILTRO POR ID DEL OPERADOR
 				}
 			
-				$this->db->order_by('S.id_sesion', 'desc');
+				$this->db->order_by('S.id_sesion', 'asc');
 				$query = $this->db->get('sitios Y');
 
 				if ($query->num_rows() > 0) {
