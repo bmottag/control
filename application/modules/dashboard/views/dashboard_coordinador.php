@@ -427,15 +427,15 @@ if($infoAlerta["fk_id_tipo_alerta"] == 3)//CONSOLIDACION
 						</a>	
 						
 						<p>
-							<strong>Número total de citados
+							<strong>Número total
 							<span class="pull-right"><?php echo number_format($conteoCitadosSesion['citados']); ?></span></strong>
 						</p>							
 							<div class="progress">
-								<div class="progress-bar progress-bar-success" role="progressbar" style="width:50%">
-								Presentes <?php echo number_format($presentes) . " (" . $porcentajePresentes . "%)"; ?>
-								</div>
 								<div class="progress-bar progress-bar-danger" role="progressbar" style="width:50%">
-								Ausentes <?php echo number_format($conteoCitadosSesion['ausentes']) . " (" . $porcentajeAusentes . "%)"; ?> 
+								Entregado <?php echo number_format($presentes) . " (" . $porcentajePresentes . "%)"; ?>
+								</div>
+								<div class="progress-bar progress-bar-success" role="progressbar" style="width:50%">
+								Disponible <?php echo number_format($conteoCitadosSesion['ausentes']) . " (" . $porcentajeAusentes . "%)"; ?> 
 								</div>
 							</div> 
 							

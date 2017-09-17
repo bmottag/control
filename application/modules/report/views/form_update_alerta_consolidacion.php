@@ -96,7 +96,7 @@ if ($retornoError) {
 							<strong>Grupo Instrumentos: </strong><?php echo $info[0]['nombre_grupo_instrumentos']; ?><br>
 							<strong>Fecha: </strong><?php echo $info[0]['fecha']; ?><br>
 							<strong>Sesión Prueba: </strong><?php echo $info[0]['sesion_prueba']; ?><br>
-							<strong>Cuadernillos Adicionales/Holguras  : </strong><?php echo $info[0]['numero_citados']; ?><br>
+							<strong>Número de Citados: </strong><?php echo $info[0]['numero_citados']; ?><br>
 					<br>
 
 
@@ -118,14 +118,14 @@ $( document ).ready( function () {
 	<input type="hidden" id="idRegistro" name="idRegistro" value="<?php echo $infoRespuesta[0]['id_registro']; ?>"/>
 
 	<div class="form-group">
-		<label class="col-sm-12 control-label" for="ausentes">Cantidad de ausentes</label>
+		<label class="col-sm-12 control-label" for="ausentes">Cantidad</label>
 		<div class="col-sm-12">
 			<input type="text" id="ausentes" name="ausentes" class="form-control" value="<?php echo $infoRespuesta[0]['ausentes']; ?>" required/>
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-12 control-label" for="ausentesConfirmar">Confirmar cantidad de ausentes</label>
+		<label class="col-sm-12 control-label" for="ausentesConfirmar">Confirmar cantidad</label>
 		<div class="col-sm-12">
 			<input type="text" id="ausentesConfirmar" name="ausentesConfirmar" class="form-control" value="<?php echo $infoRespuesta[0]['ausentes']; ?>" required/>
 		</div>

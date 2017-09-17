@@ -400,7 +400,7 @@ class General_model extends CI_Model {
 				$this->db->where('A.estado_alerta', 1); //ALERTAS ACTIVAS
 				$this->db->where('A.fk_id_rol', 4); //ALERTAS QUE SON PARA DELEGADO
 				
-				$tipoMensaje = array(1, 2);//filtrar por alertas que se muestren en el APP
+				$tipoMensaje = array(1, 2, 4);//filtrar por alertas que se muestren en el APP
 				$this->db->where_in('A.tipo_mensaje', $tipoMensaje);
 				
 				//$this->db->where('A.fecha_fin <=', $fechaActual); //FECHA FINAL SEA MAYOR A LA FECHA ACTUAL

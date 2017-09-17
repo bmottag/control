@@ -80,7 +80,7 @@
 								<th class="text-center">Sesión</th>
 								<th class="text-center">Hora Inicio</th>
 								<th class="text-center">Hora Fin</th>
-								<th class="text-center">Cuadernillos Adicionales/Holguras  </th>
+								<th class="text-center">Número de citados</th>
 								<th class="text-center">Número de ausentes</th>
 								<th class="text-center">Número de presentes</th>
 							</tr>

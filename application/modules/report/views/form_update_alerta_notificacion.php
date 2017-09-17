@@ -93,7 +93,7 @@ if ($retornoError) {
 							<strong>Grupo Instrumentos: </strong><?php echo $info[0]['nombre_grupo_instrumentos']; ?><br>
 							<strong>Fecha: </strong><?php echo $info[0]['fecha']; ?><br>
 							<strong>Sesión Prueba: </strong><?php echo $info[0]['sesion_prueba']; ?><br>
-							<strong>Cuadernillos Adicionales/Holguras  : </strong><?php echo $info[0]['numero_citados']; ?><br>
+							<strong>Número de Citados: </strong><?php echo $info[0]['numero_citados']; ?><br>
 					<br>
 
 

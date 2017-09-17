@@ -379,15 +379,15 @@ if($infoAlerta["fk_id_tipo_alerta"] == 3)//CONSOLIDACION
 						</a>	
 						
 						<p>
-							<strong>Número total de citados
+							<strong>Número total
 							<span class="pull-right"><?php echo number_format($conteoCitadosSesion['citados']); ?></span></strong>
 						</p>							
 							<div class="progress">
-								<div class="progress-bar progress-bar-success" role="progressbar" style="width:50%">
-								Presentes <?php echo number_format($presentes) . " (" . $porcentajePresentes . "%)"; ?>
-								</div>
 								<div class="progress-bar progress-bar-danger" role="progressbar" style="width:50%">
-								Ausentes <?php echo number_format($conteoCitadosSesion['ausentes']) . " (" . $porcentajeAusentes . "%)"; ?> 
+								Entregado <?php echo number_format($presentes) . " (" . $porcentajePresentes . "%)"; ?>
+								</div>
+								<div class="progress-bar progress-bar-success" role="progressbar" style="width:50%">
+								Disponible <?php echo number_format($conteoCitadosSesion['ausentes']) . " (" . $porcentajeAusentes . "%)"; ?> 
 								</div>
 							</div> 
 							
@@ -484,7 +484,7 @@ if($infoAlertaInformativa)
 							<strong>Grupo Instrumentos: </strong><?php echo $lista['nombre_grupo_instrumentos']; ?><br>
 							<strong>Fecha: </strong><?php echo $lista['fecha']; ?><br>
 							<strong>Sesión Prueba: </strong><?php echo $lista['sesion_prueba']; ?><br>
-							<strong>Cuadernillos Adicionales/Holguras  : </strong><?php echo $lista['numero_citados']; ?><br>
+							<strong>Número de Citados: </strong><?php echo $lista['numero_citados']; ?><br>
 							
 					<br>
 					<form  name="form" id="<?php echo "form_" . $lista["id_alerta"]; ?>" class="form-horizontal" method="post" action="<?php echo base_url("dashboard/registro_informativo"); ?>" >
@@ -558,7 +558,7 @@ if ($retornoError) {
 							<strong>Grupo Instrumentos: </strong><?php echo $lista['nombre_grupo_instrumentos']; ?><br>
 							<strong>Fecha: </strong><?php echo $lista['fecha']; ?><br>
 							<strong>Sesión Prueba: </strong><?php echo $lista['sesion_prueba']; ?><br>
-							<strong>Cuadernillos Adicionales/Holguras  : </strong><?php echo $lista['numero_citados']; ?><br>
+							<strong>Número de Citados: </strong><?php echo $lista['numero_citados']; ?><br>
 							
 					<br>
 					<form  name="form" id="<?php echo "form_" . $lista["id_alerta"]; ?>" class="form-horizontal" method="post" action="<?php echo base_url("dashboard/registro_notificacion"); ?>" >
@@ -650,7 +650,7 @@ if ($retornoError) {
 							<strong>Grupo Instrumentos: </strong><?php echo $lista['nombre_grupo_instrumentos']; ?><br>
 							<strong>Fecha: </strong><?php echo $lista['fecha']; ?><br>
 							<strong>Sesión Prueba: </strong><?php echo $lista['sesion_prueba']; ?><br>
-							<strong>Cuadernillos Adicionales/Holguras  : </strong><?php echo $lista['numero_citados']; ?><br>
+							<strong>Número de Citados: </strong><?php echo $lista['numero_citados']; ?><br>
 							
 					<br>
 <script>

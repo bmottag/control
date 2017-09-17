@@ -50,7 +50,7 @@ if ($retornoError) {
 
 
 <!--INFO DE LAS SESIONES -->
-<?php 
+<?php  
 	if($listadoSesiones)
 	{
 		//cargo modelos
@@ -295,10 +295,11 @@ if($infoAlerta["fk_id_tipo_alerta"] == 3)//CONSOLIDACION
 							"idAlerta" => $lista["id_alerta"]
 						);
 			$infoAlertaVencidaConsolidacion = $this->general_model->get_alertas_vencidas_by($arrParam);
-			
+		
 			//recorro las alertas y reviso se se les dio respuesta, si no se le dio respuesta las voy contando
 			$contadorConsolidacionSi = 0;
 			$contadorConsolidacionNo = 0;
+			$valorCantidad = 0;
 			if($infoAlertaVencidaConsolidacion){
 				foreach ($infoAlertaVencidaConsolidacion as $lista):
 					$arrParam = array(
@@ -306,6 +307,8 @@ if($infoAlerta["fk_id_tipo_alerta"] == 3)//CONSOLIDACION
 							"idAlerta" => $lista['id_alerta']
 					);
 					$respuesta = $this->general_model->get_respuestas_alertas_vencidas_by($arrParam);
+					
+					$valorCantidad = $valorCantidad + $respuesta[0]['ausentes']; //sumo los valores de las cantidades
 					
 					if($respuesta){
 						$contadorConsolidacionSi++;
@@ -334,10 +337,14 @@ if($infoAlerta["fk_id_tipo_alerta"] == 3)//CONSOLIDACION
 				$presentes =  $conteoCitadosSesion['citados'] - $conteoCitadosSesion['ausentes'];
 				$porcentajePresentes = round(($presentes * 100)/$conteoCitadosSesion['citados'],1); 
 				$porcentajeAusentes = round(($conteoCitadosSesion['ausentes'] * 100)/$conteoCitadosSesion['citados'],1); 
+				
+				$porcentajeTotales = round(($valorCantidad * 100)/$conteoCitadosSesion['citados'],2);
 			}else{
 				$presentes =  0;
 				$porcentajePresentes = 0; 
 				$porcentajeAusentes = 0;
+				
+				$porcentajeTotales = 0;
 			}
 ?>			
 		<div class="col-lg-6">				
@@ -369,15 +376,15 @@ if($infoAlerta["fk_id_tipo_alerta"] == 3)//CONSOLIDACION
 						</a>	
 						
 						<p>
-							<strong>Número total de citados
+							<strong>Número total
 							<span class="pull-right"><?php echo number_format($conteoCitadosSesion['citados']); ?></span></strong>
 						</p>							
 							<div class="progress">
-								<div class="progress-bar progress-bar-success" role="progressbar" style="width:50%">
-								Presentes <?php echo number_format($presentes) . " (" . $porcentajePresentes . "%)"; ?>
-								</div>
 								<div class="progress-bar progress-bar-danger" role="progressbar" style="width:50%">
-								Ausentes <?php echo number_format($conteoCitadosSesion['ausentes']) . " (" . $porcentajeAusentes . "%)"; ?> 
+								Entregado <?php echo number_format($presentes) . " (" . $porcentajePresentes . "%)"; ?>
+								</div>
+								<div class="progress-bar progress-bar-success" role="progressbar" style="width:50%">
+								Disponible <?php echo number_format($valorCantidad) . " (" . $porcentajeTotales . "%)"; ?> 
 								</div>
 							</div> 
 							
